@@ -46,6 +46,13 @@ func main() {
 		os.Exit(1)
 	}
 
+	// Print the command line options.
+	log.Printf("inmem: %v", inmem)
+	log.Printf("haddr: %s", httpAddr)
+	log.Printf("raddr: %s", raftAddr)
+	log.Printf("join: %s", joinAddr)
+	log.Printf("id: %s", nodeID)
+
 	if nodeID == "" {
 		nodeID = raftAddr
 	}
