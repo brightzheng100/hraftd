@@ -38,7 +38,25 @@ git clone https://github.com/brightzheng100/hraftd.git
 cd hraftd
 
 go mod tidy
-go install
+go build
+```
+
+## Usage
+
+```bash
+$ ./hraftd -h
+
+Usage: ./hraftd [options] <raft-data-path>
+  -haddr string
+    	Set the HTTP bind address (default "localhost:11000")
+  -id string
+    	Node ID. If not set, same as Raft bind address
+  -inmem
+    	Use in-memory storage for Raft
+  -join string
+    	Set join address, if any
+  -raddr string
+    	Set Raft bind address (default "localhost:12000")
 ```
 
 ## Running `hraftd`
