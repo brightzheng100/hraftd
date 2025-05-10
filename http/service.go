@@ -185,6 +185,7 @@ func (s *Service) handleKeyRequest(w http.ResponseWriter, r *http.Request) {
 		}
 		for k, v := range m {
 			if err := s.store.Set(k, v); err != nil {
+				log.Printf("Error when setting key: %v\n", err)
 				w.WriteHeader(http.StatusInternalServerError)
 				return
 			}
